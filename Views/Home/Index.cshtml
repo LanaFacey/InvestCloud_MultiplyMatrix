@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Multiply Matrix";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome InvestCloud </h1>
+    <p>Click Button To Test Service !</p>
+
+    <input type="button" onclick="GetMessage()" value="Click Me!" />
+    <p></p>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+@section Scripts
+{
+    <script type="text/javascript">
+         function GetMessage() {
+             $.get("/Matrix/GetMatricesFromWebAPI", function (data) {
+            $("p").html(data);
+        });
+    }
+    </script>
+}
+
